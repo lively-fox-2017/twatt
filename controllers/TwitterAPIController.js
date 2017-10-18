@@ -25,7 +25,7 @@ class TwitterAPIController {
 
   static search (req, res) {
 
-    TwitterAPI.search(req.query.q).then((result) => {
+    TwitterAPI.search(req.query.q || '').then((result) => {
 
       res.status(200).json(result);
 
