@@ -1,0 +1,25 @@
+{
+  "name": "twatt-1",
+  "version": "1.0.0",
+  "description": "akses api twitter menggunakan oauth (pagi) dan client menggunakan jQuery (siang)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimasgardenia/twatt-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimasgardenia/twatt-1/issues"
+  },
+  "homepage": "https://github.com/dimasgardenia/twatt-1#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "oauth": "^0.9.15"
+  }
+}
