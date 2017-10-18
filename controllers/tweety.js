@@ -24,7 +24,6 @@ class TwittyAct{
     static search(req, res){
         Twittod.search(req.params, (err, result)=>{
             if (err){
-                console.log('dari controller-----');
                 res.send(err)
             } else {
                 res.send(result)
@@ -33,7 +32,6 @@ class TwittyAct{
     }
 
     static newTweety(req, res){
-        console.log('dari controller-----');
         Twittod.newTweety(req.body, (err, result)=>{
             if (err) {
                 res.send(err)
