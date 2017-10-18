@@ -7,4 +7,3 @@ List of twatt routes:
 | `/api/twitter/search/:search`                  | GET    | Search tweet by keyword                          | |
 | `/api/twitter/timeline`          | GET    | Get recent tweet                                    | |
 | `/api/twitter/tweet`                 | POST   | Post new tweet                                            | tweet |
-*note _id as param*
