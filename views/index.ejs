@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%-title%></title>
+  </head>
+  <body>
+    <h1><%-title%></h1>
+    <h2>Trending Topic of Jakarta</h4>
+    <table>
+      <%if (data){data[0].trends.forEach(rows=>{%>
+        <tr>
+          <td>
+            <strong><%=rows.name%><br></strong>
+            <%=rows.tweet_volume%><br>
+          </td>
+        </tr>
+      <%})}%>
+    </table>
+  </body>
+</html>
