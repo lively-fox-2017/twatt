@@ -1,16 +1,20 @@
 var OAuth = require('oauth');
+
+const apiToken =process.env.apiToken
+const apiSecret = process.env.apiSecret
+
 var oauth = new OAuth.OAuth(
       'https://api.twitter.com/oauth/request_token',
       'https://api.twitter.com/oauth/access_token',
-      'UlAihjqHTmf2RJ7uMx6mzpgmm',
-      'wDE1crVO3pjb28TrAnbryuwsnLh3UAkPg7KEs3P2fMs2Fb3yEQ',
+      apiToken,
+      apiSecret,
       '1.0A',
       null,
       'HMAC-SHA1'
     );
 
-const userToken='920492175565172742-ndHzWf1jK7nQOVydeXwp3zigUWoKD9o'
-const userSecret='zP0jvfHOY4Z12xkBmRlxBA8EqALFY6f5S4RRPkO1KpaI9'
+const userToken= process.env.userToken
+const userSecret=process.env.userSecret
 
 class twitt{
   static getTrend(id){
