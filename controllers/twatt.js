@@ -11,4 +11,14 @@ const search = (req, res) => {
 	});
 };
 
-module.exports = {search}
+const timeline = (req, res) => {
+	Twatt.timeline()
+	.then(data => {
+		res.status(200).send(JSON.parse(data));
+	})
+	.catch(err => {
+		res.status(500).send(err);
+	});
+}
+
+module.exports = {search, timeline}

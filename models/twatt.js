@@ -25,4 +25,15 @@ const search = (keyword) => {
 	});
 };
 
-module.exports = {search};
+const timeline = () => {
+	const reqEndpoint = 'https://api.twitter.com/1.1/statuses/home_timeline.json';
+
+	return new Promise((resolve, reject) => {
+		oauth.get(reqEndpoint, userToken, userSecret, (err, data, res) => {
+			if (err) reject(err);
+			resolve(data);
+		});
+	});
+};
+
+module.exports = {search, timeline};
