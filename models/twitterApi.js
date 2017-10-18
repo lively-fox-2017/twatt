@@ -18,7 +18,7 @@ function useApiPromise(url){
       'VxhzJe2LfNx87uLX1HCGueuWEiXPzpDuEO7tJV3g67zkC', //test user secret
       function (e, data, res){
         if (e) reject(e);
-        else resolve(data)
+        else resolve(JSON.parse(data) )
       });
   })
 }
@@ -32,7 +32,7 @@ function postApiPromise(url, obj){
       obj,
       function (e, data, res){
         if (e) reject(e);
-        else resolve(data)
+        else resolve(JSON.parse(data) )
       });
   })
 }
@@ -47,7 +47,7 @@ class TwitterAPI{
   }
 
   static postTweet(stringStatus){
-    return postApiPromise('https://api.twitter.com/1.1/statuses/update.json', {status})
+    return postApiPromise('https://api.twitter.com/1.1/statuses/update.json', {status:stringStatus})
   }
 }
 
@@ -61,3 +61,15 @@ class TwitterAPI{
 // function(e, data){
 //   console.log(data);
 // })
+TwitterAPI.getAllTimeline().then(result=>{
+  console.log(result);
+  result.message = 'Berhasil'
+  result.data = result
+  res.status(200).json(result)
+}).catch((err) => {
+  console.log(err);
+  result.message = 'Internal server error'
+  res.status(500).json(result)
+})
+
+module.exports = TwitterAPI;
