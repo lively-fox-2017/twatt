@@ -19,6 +19,16 @@ const timeline = (req, res) => {
 	.catch(err => {
 		res.status(500).send(err);
 	});
-}
+};
 
-module.exports = {search, timeline}
+const tweet = (req, res) => {
+	Twatt.tweet(req.body.status)
+	.then(data => {
+		res.status(200).send(JSON.parse(data));
+	})
+	.catch(err => {
+		res.status(500).send(err);
+	});
+};
+
+module.exports = {search, timeline, tweet}

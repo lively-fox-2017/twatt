@@ -36,4 +36,15 @@ const timeline = () => {
 	});
 };
 
-module.exports = {search, timeline};
+const tweet = (status) => {
+	const reqEndpoint = 'https://api.twitter.com/1.1/statuses/update.json';
+	const stat = { "status": status };
+	return new Promise((resolve, reject) => {
+		oauth.post(reqEndpoint, userToken, userSecret, stat, (err, data) => {
+			if (err) reject(err);
+			resolve(data);
+		});
+	});
+};
+
+module.exports = {search, timeline, tweet};
