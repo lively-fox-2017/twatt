@@ -61,15 +61,15 @@ class TwitterAPI{
 // function(e, data){
 //   console.log(data);
 // })
-TwitterAPI.getAllTimeline().then(result=>{
-  console.log(result);
-  result.message = 'Berhasil'
-  result.data = result
-  res.status(200).json(result)
-}).catch((err) => {
-  console.log(err);
-  result.message = 'Internal server error'
-  res.status(500).json(result)
-})
+// TwitterAPI.getAllTimeline().then(result=>{
+//   console.log(result);
+//   result.message = 'Berhasil'
+//   result.data = result
+//   res.status(200).json(result)
+// }).catch((err) => {
+//   console.log(err);
+//   result.message = 'Internal server error'
+//   res.status(500).json(result)
+// })
 
 module.exports = TwitterAPI;
